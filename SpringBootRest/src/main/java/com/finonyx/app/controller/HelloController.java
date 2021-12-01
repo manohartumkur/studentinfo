@@ -1,6 +1,7 @@
 package com.finonyx.app.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +22,14 @@ public class HelloController {
 	public HelloWorld greetBean() {
 		
 		return new HelloWorld("Hello World");
+		
+		
+	}
+	
+	@GetMapping(value = "/v1/greetbean/{name}")
+	public HelloWorld greetBeanPathVariable(@PathVariable String name) {
+		
+		return new HelloWorld("Hello "+name.toUpperCase()+". Good Morning");
 		
 		
 	}
