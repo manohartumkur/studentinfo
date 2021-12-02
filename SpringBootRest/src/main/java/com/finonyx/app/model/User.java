@@ -23,7 +23,7 @@ import lombok.ToString;
 public class User {
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	@Size(min = 2, message = "Name should have atleast 2 characters")
 	private String name;
 	@Past(message = "Birth date should be in the past")
@@ -35,7 +35,7 @@ public class User {
 
 	}
 
-	public User(Integer id, String name, Date birthDate) {
+	public User(Long id, String name, Date birthDate) {
 		super();
 		this.id = id;
 		this.name = name;
